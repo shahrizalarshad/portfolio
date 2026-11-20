@@ -21,14 +21,14 @@ export default function Hero() {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // Satu sequence masa page load: blok bercantum, lepas tu teks naik.
+        // Satu sequence masa page load: skrin masuk dan tersusun, lepas tu teks naik.
         gsap
           .timeline({ defaults: { ease: "power3.out" } })
           .to(motionState, { assemble: 1, duration: 2.6, ease: "none" }, 0.2)
           .from(".line-inner", { yPercent: 110, duration: 1.1, stagger: 0.09 }, 0.5)
           .from(".hero-aside", { opacity: 0, y: 16, duration: 0.8 }, 1.3);
 
-        // Masa scroll: kiub terbuka dan berpusing.
+        // Masa scroll: lapisan skrin terpisah.
         gsap.to(motionState, {
           explode: 1,
           ease: "none",
