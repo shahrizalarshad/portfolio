@@ -1,4 +1,5 @@
 import { contactHref, site } from "@/lib/content";
+import Wordmark from "./Wordmark";
 
 export default function Footer() {
   return (
@@ -9,7 +10,10 @@ export default function Footer() {
           {site.email}
         </a>
         <p className="contact-meta">
-          {site.name}, {site.location}
+          <Wordmark />
+          <span>
+            {site.name}, {site.location}
+          </span>
         </p>
       </div>
     </footer>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Footer from "@/components/Footer";
+import Wordmark from "@/components/Wordmark";
 import { cases } from "@/lib/cases";
 import { site } from "@/lib/content";
 
@@ -26,7 +27,9 @@ export default async function CasePage({ params }: Props) {
   return (
     <>
       <header className="case-nav wrap">
-        <Link href="/">{site.name}</Link>
+        <Link href="/" aria-label={`${site.name}, home`}>
+          <Wordmark />
+        </Link>
         <Link href="/#work">All work</Link>
       </header>
 

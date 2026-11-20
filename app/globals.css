@@ -30,6 +30,23 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
+/* Wordmark */
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 1.625rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.wordmark i {
+  display: inline-block;
+  width: 0.2em;
+  height: 0.2em;
+  margin-left: 0.07em;
+  background: currentColor;
+}
+
 /* Nav */
 .nav {
   position: absolute;
@@ -386,9 +403,16 @@ a.work-row:focus-visible .work-kind {
   padding-bottom: 0.15em;
 }
 .contact-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
   margin-top: clamp(3rem, 8vw, 7rem);
   color: #9a9a9a;
   font-size: 0.9375rem;
+}
+.contact-meta .wordmark {
+  color: var(--white);
 }
 
 @media (max-width: 760px) {

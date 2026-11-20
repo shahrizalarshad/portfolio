@@ -1,14 +1,15 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import Wordmark from "@/components/Wordmark";
 import { about, clients, projects, services, site } from "@/lib/content";
 
 export default function Home() {
   return (
     <>
       <header className="nav wrap">
-        <a className="nav-name" href="#top">
-          {site.name}
+        <a className="nav-name" href="#top" aria-label={`${site.name}, back to top`}>
+          <Wordmark />
         </a>
         <nav aria-label="Main">
           <a href="#work">Work</a>
