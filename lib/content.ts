@@ -17,7 +17,7 @@ export const intro =
 export type Client = { name: string; logo: string };
 
 export const clients: Client[] = [
-  { name: "GeekFix", logo: "" },
+  { name: "GeekFix", logo: "/logos/geekfix.png" },
   { name: "Simpul", logo: "" },
   { name: "Fixbay", logo: "" },
 ];
