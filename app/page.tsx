@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import Clients from "@/components/Clients";
 import Footer from "@/components/Footer";
 import Wordmark from "@/components/Wordmark";
-import { about, clients, projects, services, site } from "@/lib/content";
+import { about, projects, services, site } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -22,23 +23,7 @@ export default function Home() {
       <main id="top">
         <Hero />
 
-        <section className="clients wrap" aria-labelledby="clients-title">
-          <h2 id="clients-title">Businesses I have built for</h2>
-          <ul>
-            {clients.map((c) => (
-              <li key={c.name}>
-                <div className="client">
-                  {c.logo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={c.logo} alt={c.name} />
-                  ) : (
-                    <span className="client-name">{c.name}</span>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <Clients />
 
         <section className="section wrap" id="work">
           <h2>Selected work</h2>
