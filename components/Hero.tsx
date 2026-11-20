@@ -52,7 +52,7 @@ export default function Hero() {
         <h1 className="hero-title">
           {headline.map((line) => (
             <span className="line" key={line}>
-              <span className="line-inner">{line}</span>
+              <span className="line-inner">{line} </span>
             </span>
           ))}
         </h1>
