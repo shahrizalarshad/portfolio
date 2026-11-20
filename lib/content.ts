@@ -13,13 +13,13 @@ export const intro =
 
 // Client dan syarikat yang pernah guna servis. Untuk tunjuk logo sebenar:
 // letak fail dalam public/logos/ dan isi "logo", contoh logo: "/logos/geekfix.png".
-// Kalau "logo" kosong, nama syarikat ditunjuk sebagai teks.
-export type Client = { name: string; url: string; logo: string };
+// Kalau "logo" kosong, nama syarikat ditunjuk sebagai teks. Sengaja takde link ke sistem client.
+export type Client = { name: string; logo: string };
 
 export const clients: Client[] = [
-  { name: "GeekFix", url: "https://erp.geekfix.vip/", logo: "" },
-  { name: "Simpul", url: "https://simpul-demo.fly.dev/", logo: "" },
-  { name: "Fixbay", url: "https://fixbay.co/", logo: "" },
+  { name: "GeekFix", logo: "" },
+  { name: "Simpul", logo: "" },
+  { name: "Fixbay", logo: "" },
 ];
 
 export type Project = { title: string; what: string; kind: string; href: string };
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     title: "GeekFix ERP",
     what: "Stock, purchase orders and repair jobs across every branch, tracked in real time.",
     kind: "ERP system",
-    href: "https://erp.geekfix.vip/",
+    href: "#",
   },
   {
     title: "Client project",

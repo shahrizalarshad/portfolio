@@ -24,15 +24,14 @@ export default function Home() {
           <ul>
             {clients.map((c) => (
               <li key={c.name}>
-                <a href={c.url} target="_blank" rel="noreferrer">
+                <div className="client">
                   {c.logo ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={c.logo} alt={c.name} />
                   ) : (
                     <span className="client-name">{c.name}</span>
                   )}
-                  <span className="client-url">{new URL(c.url).hostname}</span>
-                </a>
+                </div>
               </li>
             ))}
           </ul>
