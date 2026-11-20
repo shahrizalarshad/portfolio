@@ -11,9 +11,20 @@ export const headline = ["I build the", "software your", "business runs on."];
 export const intro =
   "ERP systems, websites and landing pages for small businesses that have outgrown spreadsheets and WhatsApp groups.";
 
+// Client dan syarikat yang pernah guna servis. Untuk tunjuk logo sebenar:
+// letak fail dalam public/logos/ dan isi "logo", contoh logo: "/logos/geekfix.png".
+// Kalau "logo" kosong, nama syarikat ditunjuk sebagai teks.
+export type Client = { name: string; url: string; logo: string };
+
+export const clients: Client[] = [
+  { name: "GeekFix", url: "https://erp.geekfix.vip/", logo: "" },
+  { name: "Simpul", url: "https://simpul-demo.fly.dev/", logo: "" },
+  { name: "Fixbay", url: "https://fixbay.co/", logo: "" },
+];
+
 export type Project = { title: string; what: string; kind: string; href: string };
 
-// TODO: semak senarai ni. Dua yang bawah tu placeholder, ganti dengan projek sebenar.
+// TODO: semak senarai ni. Yang last tu placeholder, ganti dengan projek sebenar.
 export const projects: Project[] = [
   {
     title: "Flipplan",
@@ -28,10 +39,10 @@ export const projects: Project[] = [
     href: "#",
   },
   {
-    title: "Client project",
-    what: "Replace this with one sentence on what the system does and who uses it.",
+    title: "GeekFix ERP",
+    what: "Stock, purchase orders and repair jobs across every branch, tracked in real time.",
     kind: "ERP system",
-    href: "#",
+    href: "https://erp.geekfix.vip/",
   },
   {
     title: "Client project",

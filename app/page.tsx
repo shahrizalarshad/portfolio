@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import { about, projects, services, site } from "@/lib/content";
+import { about, clients, projects, services, site } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -18,6 +18,25 @@ export default function Home() {
 
       <main id="top">
         <Hero />
+
+        <section className="clients wrap" aria-labelledby="clients-title">
+          <h2 id="clients-title">Businesses I have built for</h2>
+          <ul>
+            {clients.map((c) => (
+              <li key={c.name}>
+                <a href={c.url} target="_blank" rel="noreferrer">
+                  {c.logo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={c.logo} alt={c.name} />
+                  ) : (
+                    <span className="client-name">{c.name}</span>
+                  )}
+                  <span className="client-url">{new URL(c.url).hostname}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <section className="section wrap" id="work">
           <h2>Selected work</h2>

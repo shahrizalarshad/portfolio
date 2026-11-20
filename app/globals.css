@@ -119,6 +119,64 @@ a:focus-visible {
   transform: translateY(-2px);
 }
 
+/* Clients */
+.clients {
+  padding-top: clamp(3rem, 7vw, 6rem);
+}
+.clients h2 {
+  color: var(--grey);
+  margin-bottom: 1.25rem;
+}
+.clients ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--black);
+}
+.clients li + li {
+  border-left: 1px solid var(--line);
+}
+.clients a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: clamp(7rem, 12vw, 10rem);
+  padding: clamp(1rem, 2vw, 1.75rem);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.clients li:first-child a {
+  padding-left: 0;
+}
+.clients a:hover,
+.clients a:focus-visible {
+  background: var(--black);
+  color: var(--white);
+  padding-left: clamp(1rem, 2vw, 1.75rem);
+}
+.client-name {
+  font-size: clamp(1.75rem, 3.6vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+/* logo dijadikan hitam putih supaya kena dengan tema */
+.clients img {
+  height: clamp(2rem, 3.6vw, 3.25rem);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left;
+  filter: grayscale(1);
+}
+.clients a:hover img,
+.clients a:focus-visible img {
+  filter: grayscale(1) invert(1);
+}
+.client-url {
+  color: var(--grey);
+  font-size: 0.9375rem;
+}
+
 /* Sections */
 .section {
   padding-block: clamp(4rem, 10vw, 9rem);
@@ -263,8 +321,22 @@ a:focus-visible {
     text-align: left;
   }
   .services,
-  .about {
+  .about,
+  .clients ul {
     grid-template-columns: 1fr;
+  }
+  .clients li + li {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .clients a,
+  .clients li:first-child a {
+    min-height: 0;
+    padding: 1.1rem 0;
+  }
+  .clients a:hover,
+  .clients a:focus-visible {
+    padding-left: 0.75rem;
   }
 }
 
