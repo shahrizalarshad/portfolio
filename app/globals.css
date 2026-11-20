@@ -129,7 +129,7 @@ a:focus-visible {
 }
 .clients ul {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--black);
 }
 .clients li + li {
@@ -150,15 +150,15 @@ a:focus-visible {
   letter-spacing: -0.04em;
   line-height: 1;
 }
-/* logo dijadikan hitam putih supaya kena dengan tema */
+/* semua logo dah ditukar jadi hitam satu warna supaya kena dengan tema */
 .clients img {
-  height: clamp(2rem, 3.6vw, 3.25rem);
+  height: clamp(1.6rem, 2.9vw, 2.75rem);
   width: auto;
   max-width: 100%;
   object-fit: contain;
   object-position: left;
-  filter: grayscale(1);
 }
+
 /* Sections */
 .section {
   padding-block: clamp(4rem, 10vw, 9rem);
@@ -303,18 +303,27 @@ a:focus-visible {
     text-align: left;
   }
   .services,
-  .about,
-  .clients ul {
+  .about {
     grid-template-columns: 1fr;
+  }
+  .clients ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .clients li + li {
     border-left: 0;
+  }
+  .clients li:nth-child(even) {
+    border-left: 1px solid var(--line);
+  }
+  .clients li:nth-child(n + 3) {
     border-top: 1px solid var(--line);
   }
-  .client,
-  .clients li:first-child .client {
-    min-height: 0;
-    padding: 1.1rem 0;
+  .client {
+    min-height: 5.5rem;
+    padding: 1rem;
+  }
+  .clients li:nth-child(odd) .client {
+    padding-left: 0;
   }
 }
 
