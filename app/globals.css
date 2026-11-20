@@ -80,7 +80,8 @@ a:focus-visible {
 }
 /* Teks putih + difference: jadi hitam atas putih, jadi putih bila lalu atas blok hitam. */
 .hero-title {
-  font-size: clamp(2.4rem, 9.2vw, 9.5rem);
+  /* ikut lebar DAN tinggi skrin, supaya tak langgar panel 3D kat skrin pendek */
+  font-size: clamp(2.4rem, min(7.4vw, 13.5vh), 8.5rem);
   font-weight: 600;
   line-height: 0.92;
   letter-spacing: -0.045em;
@@ -90,6 +91,7 @@ a:focus-visible {
 .line {
   display: block;
   overflow: hidden;
+  white-space: nowrap;
   padding-bottom: 0.08em;
 }
 .line-inner {

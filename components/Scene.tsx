@@ -87,10 +87,10 @@ function Layers() {
 
     const g = group.current;
     const wide = viewport.width > 9;
-    g.position.x = wide ? viewport.width * 0.2 : -viewport.width * 0.06;
-    g.position.y = wide ? viewport.height * 0.1 : viewport.height * 0.2;
+    g.position.x = wide ? viewport.width * 0.22 : -viewport.width * 0.06;
+    g.position.y = wide ? viewport.height * 0.15 : viewport.height * 0.2;
     // saiz ikut skrin supaya susunan tak pernah terkeluar
-    g.scale.setScalar(Math.min(viewport.height * 0.8, viewport.width * (wide ? 0.5 : 0.74)) / 5.6);
+    g.scale.setScalar(Math.min(viewport.height * (wide ? 0.66 : 0.8), viewport.width * (wide ? 0.42 : 0.74)) / 5.6);
 
     const ry = -0.5 + explode * 0.3 + pointer.current.x * 0.16;
     const rx = 0.14 + pointer.current.y * 0.1;
