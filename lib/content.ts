@@ -38,16 +38,6 @@ export const projects: Project[] = [
     kind: "ERP system",
     slug: "geekfix-erp",
   },
-  {
-    title: "Flipplan",
-    what: "A free place for architects to publish their portfolio as a flipbook.",
-    kind: "Web platform",
-  },
-  {
-    title: "KiraJam",
-    what: "Turns shift timesheets into wages for small Malaysian businesses.",
-    kind: "SaaS",
-  },
 ];
 
 export const services = [
