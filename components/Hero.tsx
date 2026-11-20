@@ -5,7 +5,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { headline, intro } from "@/lib/content";
+import { contactHref, headline, intro } from "@/lib/content";
 import { motionState } from "@/lib/motion";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -58,7 +58,7 @@ export default function Hero() {
         </h1>
         <div className="hero-aside">
           <p>{intro}</p>
-          <a className="button" href="#contact">
+          <a className="button" href={contactHref}>
             Start a project
           </a>
         </div>

@@ -2,9 +2,13 @@
 
 export const site = {
   name: "Shahrizal Arshad",
-  email: "hello@example.com", // TODO: tukar ke email sebenar
+  // Email sebenar dibaca dari environment variable NEXT_PUBLIC_CONTACT_EMAIL (set kat Vercel).
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@example.com",
   location: "Petaling Jaya, Malaysia",
 };
+
+// Link yang buka app email terus, dengan subject siap diisi.
+export const contactHref = `mailto:${site.email}?subject=${encodeURIComponent("New project")}`;
 
 export const headline = ["I build the", "software your", "business runs on."];
 

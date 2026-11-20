@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import { about, clients, projects, services, site } from "@/lib/content";
+import { about, clients, contactHref, projects, services, site } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -77,7 +77,7 @@ export default function Home() {
       <footer className="contact" id="contact">
         <div className="wrap">
           <h2>Tell me what you need built.</h2>
-          <a className="contact-mail" href={`mailto:${site.email}`}>
+          <a className="contact-mail" href={contactHref}>
             {site.email}
           </a>
           <p className="contact-meta">
