@@ -1,5 +1,7 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
-import { about, clients, contactHref, projects, services, site } from "@/lib/content";
+import Footer from "@/components/Footer";
+import { about, clients, projects, services, site } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -42,11 +44,19 @@ export default function Home() {
           <ul className="work">
             {projects.map((p, i) => (
               <li key={i}>
-                <a href={p.href}>
-                  <span className="work-title">{p.title}</span>
-                  <span className="work-what">{p.what}</span>
-                  <span className="work-kind">{p.kind}</span>
-                </a>
+                {p.slug ? (
+                  <Link className="work-row" href={`/work/${p.slug}`}>
+                    <span className="work-title">{p.title}</span>
+                    <span className="work-what">{p.what}</span>
+                    <span className="work-kind">{p.kind}</span>
+                  </Link>
+                ) : (
+                  <div className="work-row">
+                    <span className="work-title">{p.title}</span>
+                    <span className="work-what">{p.what}</span>
+                    <span className="work-kind">{p.kind}</span>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
@@ -74,17 +84,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="contact" id="contact">
-        <div className="wrap">
-          <h2>Tell me what you need built.</h2>
-          <a className="contact-mail" href={contactHref}>
-            {site.email}
-          </a>
-          <p className="contact-meta">
-            {site.name}, {site.location}
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

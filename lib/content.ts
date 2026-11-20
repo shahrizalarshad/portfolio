@@ -27,27 +27,26 @@ export const clients: Client[] = [
   { name: "Ayasha", logo: "/logos/ayasha.png" },
 ];
 
-export type Project = { title: string; what: string; kind: string; href: string };
+// "slug" diisi kalau projek tu ada case study dalam lib/cases.ts. Kalau kosong, row tu tak boleh diklik.
+export type Project = { title: string; what: string; kind: string; slug?: string };
 
-// Tambah projek baru kat sini: satu blok { title, what, kind, href } untuk setiap projek.
+// Tambah projek baru kat sini: satu blok { title, what, kind } untuk setiap projek.
 export const projects: Project[] = [
+  {
+    title: "GeekFix ERP",
+    what: "Stock, payroll and accounting in one system for a phone repair business with 26 branches.",
+    kind: "ERP system",
+    slug: "geekfix-erp",
+  },
   {
     title: "Flipplan",
     what: "A free place for architects to publish their portfolio as a flipbook.",
     kind: "Web platform",
-    href: "#",
   },
   {
     title: "KiraJam",
     what: "Turns shift timesheets into wages for small Malaysian businesses.",
     kind: "SaaS",
-    href: "#",
-  },
-  {
-    title: "GeekFix ERP",
-    what: "Stock, purchase orders and repair jobs across every branch, tracked in real time.",
-    kind: "ERP system",
-    href: "#",
   },
 ];
 
