@@ -29,7 +29,7 @@ export const clients: Client[] = [
 
 export type Project = { title: string; what: string; kind: string; href: string };
 
-// TODO: semak senarai ni. Yang last tu placeholder, ganti dengan projek sebenar.
+// Tambah projek baru kat sini: satu blok { title, what, kind, href } untuk setiap projek.
 export const projects: Project[] = [
   {
     title: "Flipplan",
@@ -47,12 +47,6 @@ export const projects: Project[] = [
     title: "GeekFix ERP",
     what: "Stock, purchase orders and repair jobs across every branch, tracked in real time.",
     kind: "ERP system",
-    href: "#",
-  },
-  {
-    title: "Client project",
-    what: "Replace this with one sentence on what the page sells and to whom.",
-    kind: "Landing page",
     href: "#",
   },
 ];
