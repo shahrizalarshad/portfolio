@@ -16,7 +16,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const c = cases.find((x) => x.slug === slug);
   if (!c) return {};
-  return { title: `${c.title} | ${site.name}`, description: c.lead };
+  return {
+    title: c.title,
+    description: c.lead,
+    alternates: {
+      canonical: `/work/${c.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      url: `/work/${c.slug}`,
+      title: `${c.title} | ${site.name}`,
+      description: c.lead,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${c.title} | ${site.name}`,
+      description: c.lead,
+    },
+  };
 }
 
 export default async function CasePage({ params }: Props) {
@@ -26,14 +43,20 @@ export default async function CasePage({ params }: Props) {
 
   return (
     <>
+      <a className="skip-link" href="#case-main">
+        Skip to content
+      </a>
+
       <header className="case-nav wrap">
         <Link href="/" aria-label={`${site.name}, home`}>
           <Wordmark />
         </Link>
-        <Link href="/#work">All work</Link>
+        <Link className="case-back" href="/#work">
+          <span aria-hidden="true">←</span> All work
+        </Link>
       </header>
 
-      <main>
+      <main id="case-main">
         <section className="case-head wrap">
           <p className="case-kind">{c.kind}</p>
           <h1 className="case-title">{c.title}</h1>
@@ -41,12 +64,32 @@ export default async function CasePage({ params }: Props) {
           <dl className="case-facts">
             {c.facts.map((f) => (
               <div key={f.label}>
-                <dt>{f.value}</dt>
-                <dd>{f.label}</dd>
+                <dt>{f.label}</dt>
+                <dd>{f.value}</dd>
               </div>
             ))}
           </dl>
         </section>
+
+        {c.flow && c.flow.length > 0 && (
+          <section className="case-block wrap" aria-labelledby="case-flow-heading">
+            <h2 id="case-flow-heading">How it connects</h2>
+            <ol className="case-flow">
+              {c.flow.map((stage) => (
+                <li className="case-flow-step" key={stage.step}>
+                  <span className="case-flow-no">{stage.step}</span>
+                  <h3>{stage.title}</h3>
+                  <p>{stage.detail}</p>
+                  <ul className="case-flow-tags">
+                    {stage.tags.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
 
         <section className="case-block wrap">
           <h2>What it does</h2>

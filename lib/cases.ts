@@ -8,6 +8,12 @@ export type CaseStudy = {
   kind: string;
   lead: string;
   facts: { value: string; label: string }[];
+  flow?: {
+    step: string;
+    title: string;
+    detail: string;
+    tags: string[];
+  }[];
   does: { area: string; items: string[] }[];
   automates: string[];
   hard: { title: string; body: string }[];
@@ -22,9 +28,35 @@ export const cases: CaseStudy[] = [
     lead: "GeekFix repairs phones and devices at 26 branches across Malaysia. This is the system the business runs on: stock, repair and sales records, HR and payroll, finance and accounting, all in one place.",
     facts: [
       { value: "26", label: "branches" },
-      { value: "110", label: "staff using it, roughly" },
+      { value: "~110", label: "active staff" },
       { value: "58,000+", label: "repair jobs on record" },
       { value: "200,000+", label: "stock records" },
+    ],
+    flow: [
+      {
+        step: "01",
+        title: "26 branches & legacy apps",
+        detail: "Existing repair and POS apps keep running without disruption.",
+        tags: ["Repair jobs", "Branch stock", "Sales & refunds"],
+      },
+      {
+        step: "02",
+        title: "Scheduled 10-min sync",
+        detail: "Pulls records in automatically and scopes them by branch and role.",
+        tags: ["8 access roles", "Branch isolation", "Zero double entry"],
+      },
+      {
+        step: "03",
+        title: "Core ERP & payroll engine",
+        detail: "Operations, HR attendance, claims, and statutory Malaysia tables.",
+        tags: ["EPF · SOCSO · EIS · HRDF", "Staff portal", "Approvals"],
+      },
+      {
+        step: "04",
+        title: "Balanced books & compliance",
+        detail: "Double-entry journals, branch P&L, reconciliation and e-Invoice docs.",
+        tags: ["Auto journals", "Cashbook", "MyInvois ready"],
+      },
     ],
     does: [
       {
@@ -82,5 +114,3 @@ export const cases: CaseStudy[] = [
     stack: ["Laravel", "PHP", "MySQL", "Docker", "AWS"],
   },
 ];
-
-export const caseSlugs = new Set(cases.map((c) => c.slug));

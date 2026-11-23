@@ -7,6 +7,14 @@ export const site = {
   location: "Petaling Jaya, Malaysia",
 };
 
+const rawSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://portfolio-silk-ten-bne92xh4xj.vercel.app");
+
+export const siteUrl = rawSiteUrl.replace(/\/$/, "");
+
 // Link yang buka app email terus, dengan subject siap diisi.
 export const contactHref = `mailto:${site.email}?subject=${encodeURIComponent("New project")}`;
 
