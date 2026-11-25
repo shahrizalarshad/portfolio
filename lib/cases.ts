@@ -113,4 +113,96 @@ export const cases: CaseStudy[] = [
     ],
     stack: ["Laravel", "PHP", "MySQL", "Docker", "AWS"],
   },
+  {
+    slug: "ayasha-bloom-ops",
+    title: "Ayasha Bloom Ops",
+    kind: "Order & ops system",
+    lead: "Ayasha Blooms makes flower brick bouquets to order, run by a team of two. Orders used to arrive on WhatsApp, by hand and through a separate catalogue. Now every order, payment and ringgit of profit lives in one app that works on a phone.",
+    facts: [
+      { value: "2", label: "people running the shop" },
+      { value: "8", label: "order stages tracked" },
+      { value: "2", label: "languages, EN and BM" },
+      { value: "7", label: "products in the catalogue" },
+    ],
+    flow: [
+      {
+        step: "01",
+        title: "Customer orders from the catalogue",
+        detail: "A public catalogue where customers pick a bouquet, a date and a pickup or delivery option.",
+        tags: ["Lead time rules", "Closed dates", "Daily order cap"],
+      },
+      {
+        step: "02",
+        title: "Order lands in the staff app",
+        detail: "Catalogue orders arrive as inquiries next to the ones staff key in from WhatsApp.",
+        tags: ["Today dashboard", "Late & due soon", "WhatsApp summary"],
+      },
+      {
+        step: "03",
+        title: "Payment and production",
+        detail: "Deposit and balance are recorded with receipts while the order moves through each stage.",
+        tags: ["Receipt upload", "DuitNow QR", "Status history"],
+      },
+      {
+        step: "04",
+        title: "Customer tracker and profit",
+        detail: "The customer follows their order live, and the shop sees the profit on every order.",
+        tags: ["Live tracker", "Material costs", "Monthly profit"],
+      },
+    ],
+    does: [
+      {
+        area: "Orders",
+        items: [
+          "A Today screen: what is due today, what is late, the next 7 days and unpaid balances",
+          "Every order in one list with search and status filters, from inquiry to completed",
+          "Order details, card message, delivery or pickup, notes and full history",
+          "One tap to send a ready-written order summary to WhatsApp",
+        ],
+      },
+      {
+        area: "Customers",
+        items: [
+          "A public catalogue with categories, product pages and an order form",
+          "A thank-you page with the deposit amount, bank details and DuitNow QR",
+          "An order tracker that moves as staff update the status",
+          "A 3D bouquet builder for customers to design their own",
+        ],
+      },
+      {
+        area: "Money",
+        items: [
+          "Deposit, balance and full payments, each with its receipt attached",
+          "Material costs per product from a shared materials list",
+          "Extra expenses per order, profit per order and a monthly summary",
+        ],
+      },
+    ],
+    automates: [
+      "Turning a catalogue order into a staff order, with no retyping",
+      "Blocking dates that are closed, too soon or already fully booked",
+      "Working out the deposit due from the shop's deposit rate",
+      "Updating the customer's tracker whenever the status changes",
+      "Locking in the material cost of each order and totalling profit by month",
+    ],
+    hard: [
+      {
+        title: "A public catalogue on a private database",
+        body: "Customers can order without logging in, but they can only read the catalogue and their own order summary. Everything else is visible to registered staff only.",
+      },
+      {
+        title: "Profit that stays true",
+        body: "Material prices change. Each order keeps the cost it had when it was placed, so last month's profit does not shift when a price is updated.",
+      },
+      {
+        title: "Built for a phone first",
+        body: "The shop runs from phones, so it installs as an app with a bottom menu, and opens into a two-column layout on a laptop.",
+      },
+      {
+        title: "Two languages everywhere",
+        body: "Every staff screen and customer page is in English and Bahasa Melayu, and an automated test catches any missing translation.",
+      },
+    ],
+    stack: ["Next.js", "TypeScript", "Supabase", "Postgres", "Vercel"],
+  },
 ];
