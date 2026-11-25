@@ -46,6 +46,12 @@ export const projects: Project[] = [
     kind: "ERP system",
     slug: "geekfix-erp",
   },
+  {
+    title: "Ayasha Bloom Ops",
+    what: "Orders, payments and profit in one phone-first app for a two-person flower bouquet business.",
+    kind: "Order & ops system",
+    slug: "ayasha-bloom-ops",
+  },
 ];
 
 export const services = [
