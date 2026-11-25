@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import CaseShowcase from "@/components/CaseShowcase";
 import Footer from "@/components/Footer";
 import Wordmark from "@/components/Wordmark";
 import { cases } from "@/lib/cases";
@@ -70,6 +71,8 @@ export default async function CasePage({ params }: Props) {
             ))}
           </dl>
         </section>
+
+        <CaseShowcase slug={c.slug} image={c.image} />
 
         {c.flow && c.flow.length > 0 && (
           <section className="case-block wrap" aria-labelledby="case-flow-heading">
