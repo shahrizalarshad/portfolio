@@ -1,0 +1,5 @@
+# Cloudflare Pages: gambar preview takde extension fail, jadi beritahu browser ia PNG.
+/opengraph-image
+  Content-Type: image/png
+/work/*/opengraph-image
+  Content-Type: image/png

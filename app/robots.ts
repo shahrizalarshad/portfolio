@@ -1,3 +1,6 @@
+// Dijana sekali masa build (diperlukan untuk static export).
+export const dynamic = "force-static";
+
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/lib/content";
 

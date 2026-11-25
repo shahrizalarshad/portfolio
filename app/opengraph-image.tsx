@@ -1,3 +1,6 @@
+// Dijana sekali masa build (diperlukan untuk static export).
+export const dynamic = "force-static";
+
 import { ImageResponse } from "next/og";
 import { intro, site } from "@/lib/content";
 
