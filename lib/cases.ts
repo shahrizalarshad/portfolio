@@ -7,6 +7,11 @@ export type CaseStudy = {
   title: string;
   kind: string;
   lead: string;
+  image?: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
   facts: { value: string; label: string }[];
   flow?: {
     step: string;
@@ -26,6 +31,11 @@ export const cases: CaseStudy[] = [
     title: "GeekFix ERP",
     kind: "ERP system",
     lead: "GeekFix repairs phones and devices at 26 branches across Malaysia. This is the system the business runs on: stock, repair and sales records, HR and payroll, finance and accounting, all in one place.",
+    image: {
+      src: "/work/geekfix-erp.jpg",
+      alt: "Monochrome studio flat-lay of smartphone repair components, precision tools, ESD screw tray, and QR stock labels",
+      caption: "26 branches · serialized parts, repair tickets & QR dispatch",
+    },
     facts: [
       { value: "26", label: "branches" },
       { value: "~110", label: "active staff" },
@@ -118,6 +128,11 @@ export const cases: CaseStudy[] = [
     title: "Ayasha Bloom Ops",
     kind: "Order & ops system",
     lead: "Ayasha Blooms makes flower brick bouquets to order, run by a team of two. Orders used to arrive on WhatsApp, by hand and through a separate catalogue. Now every order, payment and ringgit of profit lives in one app that works on a phone.",
+    image: {
+      src: "/work/ayasha-bloom-ops.jpg",
+      alt: "Monochrome studio photograph of a handcrafted modular brick flower bouquet wrapped in matte architectural paper",
+      caption: "Made-to-order modular brick bouquets · tracked from inquiry to profit",
+    },
     facts: [
       { value: "2", label: "people running the shop" },
       { value: "8", label: "order stages tracked" },

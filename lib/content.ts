@@ -36,7 +36,15 @@ export const clients: Client[] = [
 ];
 
 // "slug" diisi kalau projek tu ada case study dalam lib/cases.ts. Kalau kosong, row tu tak boleh diklik.
-export type Project = { title: string; what: string; kind: string; slug?: string };
+export type Project = {
+  title: string;
+  what: string;
+  kind: string;
+  slug?: string;
+  image?: string;
+  imageAlt?: string;
+  meta?: string[];
+};
 
 // Tambah projek baru kat sini: satu blok { title, what, kind } untuk setiap projek.
 export const projects: Project[] = [
@@ -45,12 +53,20 @@ export const projects: Project[] = [
     what: "Stock, payroll and accounting in one system for a phone repair business with 26 branches.",
     kind: "ERP system",
     slug: "geekfix-erp",
+    image: "/work/geekfix-erp.jpg",
+    imageAlt:
+      "Monochrome studio flat-lay of smartphone repair components, precision tools, ESD screw tray, and QR stock labels",
+    meta: ["26 branches", "~110 staff", "MyInvois ready"],
   },
   {
     title: "Ayasha Bloom Ops",
     what: "Orders, payments and profit in one phone-first app for a two-person flower bouquet business.",
     kind: "Order & ops system",
     slug: "ayasha-bloom-ops",
+    image: "/work/ayasha-bloom-ops.jpg",
+    imageAlt:
+      "Monochrome studio photograph of a handcrafted modular brick flower bouquet wrapped in matte architectural paper",
+    meta: ["Phone-first", "EN & BM", "DuitNow QR"],
   },
 ];
 

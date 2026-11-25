@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Clients from "@/components/Clients";
@@ -36,30 +37,60 @@ export default function Home() {
         <section className="section wrap" id="work">
           <h2>Selected work</h2>
           <ul className="work">
-            {projects.map((p) => (
-              <li key={p.title}>
-                {p.slug ? (
-                  <Link className="work-row" href={`/work/${p.slug}`}>
-                    <span className="work-title">{p.title}</span>
-                    <span className="work-what">{p.what}</span>
-                    <span className="work-kind">
-                      <span>{p.kind}</span>
-                      <span className="work-cta">
-                        Case study <span className="arrow" aria-hidden="true">↗</span>
+            {projects.map((p, idx) => {
+              const inner = (
+                <>
+                  <div className="work-copy">
+                    <div className="work-eyebrow">
+                      <span className="work-no" aria-hidden="true">
+                        0{idx + 1}
                       </span>
-                    </span>
-                  </Link>
-                ) : (
-                  <div className="work-row">
+                      <span className="work-kind-pill">{p.kind}</span>
+                    </div>
                     <span className="work-title">{p.title}</span>
                     <span className="work-what">{p.what}</span>
-                    <span className="work-kind">
-                      <span>{p.kind}</span>
-                    </span>
+                    <div className="work-foot">
+                      {p.meta && p.meta.length > 0 && (
+                        <span className="work-meta">{p.meta.join(" · ")}</span>
+                      )}
+                      {p.slug && (
+                        <span className="work-cta">
+                          Case study <span className="arrow" aria-hidden="true">↗</span>
+                        </span>
+                      )}
+                    </div>
                   </div>
-                )}
-              </li>
-            ))}
+
+                  {p.image && (
+                    <div className="work-media">
+                      <Image
+                        src={p.image}
+                        alt={p.imageAlt ?? p.title}
+                        width={1200}
+                        height={896}
+                        sizes="(max-width: 760px) 100vw, (max-width: 1024px) 42vw, 34vw"
+                      />
+                    </div>
+                  )}
+                </>
+              );
+
+              return (
+                <li key={p.title}>
+                  {p.slug ? (
+                    <Link
+                      id={`work-card-${p.slug}`}
+                      className="work-row"
+                      href={`/work/${p.slug}`}
+                    >
+                      {inner}
+                    </Link>
+                  ) : (
+                    <div className="work-row">{inner}</div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </section>
 
