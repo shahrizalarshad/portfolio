@@ -135,7 +135,7 @@ export const cases: CaseStudy[] = [
     },
     facts: [
       { value: "2", label: "people running the shop" },
-      { value: "8", label: "order stages tracked" },
+      { value: "7", label: "order stages, inquiry to done" },
       { value: "2", label: "languages, EN and BM" },
       { value: "7", label: "products in the catalogue" },
     ],
@@ -181,7 +181,7 @@ export const cases: CaseStudy[] = [
           "A public catalogue with categories, product pages and an order form",
           "A thank-you page with the deposit amount, bank details and DuitNow QR",
           "An order tracker that moves as staff update the status",
-          "A 3D bouquet builder for customers to design their own",
+          "A 3D bouquet builder: customers design their own and send it on WhatsApp",
         ],
       },
       {

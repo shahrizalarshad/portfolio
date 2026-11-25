@@ -898,7 +898,7 @@ a.work-row:focus-visible .work-media img {
 }
 .case-progress {
   display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.35rem;
   margin-bottom: 0.85rem;
 }
