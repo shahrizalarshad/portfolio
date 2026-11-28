@@ -576,7 +576,7 @@ button:focus-visible {
   height: clamp(1.8rem, 3.1vw, 2.95rem);
 }
 .client[data-client="ayasha"] img {
-  height: clamp(1.35rem, 2.3vw, 2.2rem);
+  height: clamp(2rem, 3.4vw, 3.2rem);
 }
 
 /* Sections */
