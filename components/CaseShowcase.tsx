@@ -134,8 +134,8 @@ const AYASHA_ORDERS: BouquetOrder[] = [
   {
     id: "ab-208",
     code: "AB-1208",
-    itemEn: "Custom 3D Builder Arrangement",
-    itemBm: "Gubahan Khas Pembina 3D",
+    itemEn: "Custom Wild Flower Box",
+    itemBm: "Wild Flower Box Khas",
     slotEn: "Pickup · Tomorrow",
     slotBm: "Ambil sendiri · Esok",
     paymentEn: "Awaiting 50% deposit",
@@ -153,7 +153,7 @@ export default function CaseShowcase({ slug, image }: Props) {
   const [lang, setLang] = useState<Lang>("en");
   const [orderId, setOrderId] = useState<string>(AYASHA_ORDERS[0].id);
 
-  if (slug !== "geekfix-erp" && slug !== "ayasha-bloom-ops" && !image) {
+  if (slug !== "geekfix-erp" && slug !== "ayasha-blooms" && !image) {
     return null;
   }
 
@@ -257,18 +257,18 @@ export default function CaseShowcase({ slug, image }: Props) {
           </div>
         )}
 
-        {slug === "ayasha-bloom-ops" && (
+        {slug === "ayasha-blooms" && (
           <div
             className="sys case-ui"
-            aria-label="Interactive Ayasha Bloom Ops queue and profit tracker"
+            aria-label="Interactive Ayasha Blooms queue and profit tracker"
           >
             <div className="sys-bar">
               <div className="sys-id">
                 <span className="sys-mark" aria-hidden="true" />
                 <span>
                   {lang === "en"
-                    ? "Ayasha Bloom Ops · Today Queue"
-                    : "Ayasha Bloom Ops · Giliran Hari Ini"}
+                    ? "Ayasha Blooms · Today"
+                    : "Ayasha Blooms · Hari ini"}
                 </span>
               </div>
               <div className="sys-toggle" role="tablist" aria-label="Interface language">

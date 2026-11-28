@@ -59,14 +59,14 @@ export const projects: Project[] = [
     meta: ["26 branches", "~110 staff", "MyInvois ready"],
   },
   {
-    title: "Ayasha Bloom Ops",
-    what: "Orders, payments and profit in one phone-first app for a two-person flower bouquet business.",
+    title: "Ayasha Blooms",
+    what: "Orders, payments and profit in one phone-first system that also feeds the brand website, for a two-person flower bouquet business.",
     kind: "Order & ops system",
-    slug: "ayasha-bloom-ops",
-    image: "/work/ayasha-bloom-ops.jpg",
+    slug: "ayasha-blooms",
+    image: "/work/ayasha-blooms.jpg",
     imageAlt:
       "Monochrome studio photograph of a handcrafted modular brick flower bouquet wrapped in matte architectural paper",
-    meta: ["Phone-first", "EN & BM", "DuitNow QR"],
+    meta: ["Phone-first", "EN & BM", "Live brand site"],
   },
 ];
 
