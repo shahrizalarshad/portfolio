@@ -124,39 +124,39 @@ export const cases: CaseStudy[] = [
     stack: ["Laravel", "PHP", "MySQL", "Docker", "AWS"],
   },
   {
-    slug: "ayasha-bloom-ops",
-    title: "Ayasha Bloom Ops",
+    slug: "ayasha-blooms",
+    title: "Ayasha Blooms",
     kind: "Order & ops system",
-    lead: "Ayasha Blooms makes flower brick bouquets to order, run by a team of two. Orders used to arrive on WhatsApp, by hand and through a separate catalogue. Now every order, payment and ringgit of profit lives in one app that works on a phone.",
+    lead: "Ayasha Blooms makes flower brick bouquets to order, run by a team of two. Orders used to arrive on WhatsApp, by hand and through a separate catalogue. Now one system at app.ayashablooms.com runs every order, payment and ringgit of profit, and feeds the brand website at ayashablooms.com.",
     image: {
-      src: "/work/ayasha-bloom-ops.jpg",
+      src: "/work/ayasha-blooms.jpg",
       alt: "Monochrome studio photograph of a handcrafted modular brick flower bouquet wrapped in matte architectural paper",
-      caption: "Made-to-order modular brick bouquets · tracked from inquiry to profit",
+      caption: "Made-to-order brick flower bouquets · tracked from inquiry to profit",
     },
     facts: [
       { value: "2", label: "people running the shop" },
-      { value: "8", label: "order stages tracked" },
+      { value: "7", label: "order stages, inquiry to done" },
+      { value: "2", label: "sites on one database" },
       { value: "2", label: "languages, EN and BM" },
-      { value: "7", label: "products in the catalogue" },
     ],
     flow: [
       {
         step: "01",
-        title: "Customer orders from the catalogue",
-        detail: "A public catalogue where customers pick a bouquet, a date and a pickup or delivery option.",
-        tags: ["Lead time rules", "Closed dates", "Daily order cap"],
+        title: "Customer browses the brand website",
+        detail: "ayashablooms.com shows products, prices and booking rules read live from the system.",
+        tags: ["Live prices", "EN & BM", "No double entry"],
       },
       {
         step: "02",
-        title: "Order lands in the staff app",
-        detail: "Catalogue orders arrive as inquiries next to the ones staff key in from WhatsApp.",
-        tags: ["Today dashboard", "Late & due soon", "WhatsApp summary"],
+        title: "Customer orders from the catalogue",
+        detail: "The catalogue at app.ayashablooms.com takes the order with a date and a pickup or delivery option.",
+        tags: ["7-day advance booking", "Closed dates", "Daily order cap"],
       },
       {
         step: "03",
-        title: "Payment and production",
-        detail: "Deposit and balance are recorded with receipts while the order moves through each stage.",
-        tags: ["Receipt upload", "DuitNow QR", "Status history"],
+        title: "Staff run it from the Today screen",
+        detail: "Catalogue orders arrive as inquiries next to the ones keyed in from WhatsApp, then move through each stage.",
+        tags: ["Deposit & receipts", "DuitNow QR", "Status history"],
       },
       {
         step: "04",
@@ -178,10 +178,10 @@ export const cases: CaseStudy[] = [
       {
         area: "Customers",
         items: [
-          "A public catalogue with categories, product pages and an order form",
+          "A brand website at ayashablooms.com, in English and Bahasa Melayu",
+          "A catalogue with product pages and an order form, styled to match the website",
           "A thank-you page with the deposit amount, bank details and DuitNow QR",
           "An order tracker that moves as staff update the status",
-          "A 3D bouquet builder for customers to design their own",
         ],
       },
       {
@@ -194,13 +194,18 @@ export const cases: CaseStudy[] = [
       },
     ],
     automates: [
+      "Showing the same products, prices, lead time and deposit rate on the brand website",
       "Turning a catalogue order into a staff order, with no retyping",
-      "Blocking dates that are closed, too soon or already fully booked",
+      "Blocking dates that are closed, less than 7 days away or already fully booked",
       "Working out the deposit due from the shop's deposit rate",
       "Updating the customer's tracker whenever the status changes",
       "Locking in the material cost of each order and totalling profit by month",
     ],
     hard: [
+      {
+        title: "One source for two sites",
+        body: "Staff change a product or a price once in the system. The brand website reads it from the same database, so the two never disagree.",
+      },
       {
         title: "A public catalogue on a private database",
         body: "Customers can order without logging in, but they can only read the catalogue and their own order summary. Everything else is visible to registered staff only.",
@@ -211,11 +216,7 @@ export const cases: CaseStudy[] = [
       },
       {
         title: "Built for a phone first",
-        body: "The shop runs from phones, so it installs as an app with a bottom menu, and opens into a two-column layout on a laptop.",
-      },
-      {
-        title: "Two languages everywhere",
-        body: "Every staff screen and customer page is in English and Bahasa Melayu, and an automated test catches any missing translation.",
+        body: "The shop runs from phones, so it installs as an app with a bottom menu, opens into a two-column layout on a laptop, and works in English and Bahasa Melayu.",
       },
     ],
     stack: ["Next.js", "TypeScript", "Supabase", "Postgres", "Vercel"],

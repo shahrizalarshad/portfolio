@@ -103,46 +103,46 @@ type BouquetOrder = {
 const AYASHA_ORDERS: BouquetOrder[] = [
   {
     id: "ab-204",
-    code: "#AB-204",
+    code: "AB-1204",
     itemEn: "Monochrome Peony Brick Bouquet",
     itemBm: "Jambangan Bunga Bata Peony Monokrom",
-    slotEn: "Pickup · Today, 2:00 PM",
-    slotBm: "Ambil sendiri · Hari ini, 2:00 PTG",
+    slotEn: "Pickup · Today",
+    slotBm: "Ambil sendiri · Hari ini",
     paymentEn: "Deposit paid · DuitNow QR",
     paymentBm: "Deposit dijelaskan · DuitNow QR",
-    stageIndex: 6,
-    stageEn: "Stage 6 of 8 · In assembly",
-    stageBm: "Tahap 6 / 8 · Sedang digubah",
+    stageIndex: 4,
+    stageEn: "Stage 4 of 7 · In assembly",
+    stageBm: "Tahap 4 / 7 · Dalam assembly",
     price: 185,
     materialCost: 68,
   },
   {
     id: "ab-205",
-    code: "#AB-205",
+    code: "AB-1205",
     itemEn: "Botanical Rose & Eucalyptus Set",
     itemBm: "Set Ros Botanikal & Eucalyptus",
-    slotEn: "Delivery · Today, 5:30 PM",
-    slotBm: "Penghantaran · Hari ini, 5:30 PTG",
+    slotEn: "Delivery · Today",
+    slotBm: "Penghantaran · Hari ini",
     paymentEn: "Full payment · Receipt attached",
     paymentBm: "Bayaran penuh · Resit dilampirkan",
-    stageIndex: 7,
-    stageEn: "Stage 7 of 8 · Ready for dispatch",
-    stageBm: "Tahap 7 / 8 · Sedia dihantar",
+    stageIndex: 5,
+    stageEn: "Stage 5 of 7 · Ready / QC",
+    stageBm: "Tahap 5 / 7 · Siap / QC",
     price: 240,
     materialCost: 86,
   },
   {
     id: "ab-208",
-    code: "#AB-208",
-    itemEn: "Custom 3D Builder Arrangement",
-    itemBm: "Gubahan Khas Pembina 3D",
-    slotEn: "Pickup · Tomorrow, 11:00 AM",
-    slotBm: "Ambil sendiri · Esok, 11:00 PG",
+    code: "AB-1208",
+    itemEn: "Custom Wild Flower Box",
+    itemBm: "Wild Flower Box Khas",
+    slotEn: "Pickup · Tomorrow",
+    slotBm: "Ambil sendiri · Esok",
     paymentEn: "Awaiting 50% deposit",
     paymentBm: "Menunggu deposit 50%",
     stageIndex: 2,
-    stageEn: "Stage 2 of 8 · Deposit link sent",
-    stageBm: "Tahap 2 / 8 · Pautan deposit dihantar",
+    stageEn: "Stage 2 of 7 · Quotation sent",
+    stageBm: "Tahap 2 / 7 · Quotation dihantar",
     price: 210,
     materialCost: 74,
   },
@@ -153,7 +153,7 @@ export default function CaseShowcase({ slug, image }: Props) {
   const [lang, setLang] = useState<Lang>("en");
   const [orderId, setOrderId] = useState<string>(AYASHA_ORDERS[0].id);
 
-  if (slug !== "geekfix-erp" && slug !== "ayasha-bloom-ops" && !image) {
+  if (slug !== "geekfix-erp" && slug !== "ayasha-blooms" && !image) {
     return null;
   }
 
@@ -257,18 +257,18 @@ export default function CaseShowcase({ slug, image }: Props) {
           </div>
         )}
 
-        {slug === "ayasha-bloom-ops" && (
+        {slug === "ayasha-blooms" && (
           <div
             className="sys case-ui"
-            aria-label="Interactive Ayasha Bloom Ops queue and profit tracker"
+            aria-label="Interactive Ayasha Blooms queue and profit tracker"
           >
             <div className="sys-bar">
               <div className="sys-id">
                 <span className="sys-mark" aria-hidden="true" />
                 <span>
                   {lang === "en"
-                    ? "Ayasha Bloom Ops · Today Queue"
-                    : "Ayasha Bloom Ops · Giliran Hari Ini"}
+                    ? "Ayasha Blooms · Today"
+                    : "Ayasha Blooms · Hari ini"}
                 </span>
               </div>
               <div className="sys-toggle" role="tablist" aria-label="Interface language">
@@ -340,7 +340,7 @@ export default function CaseShowcase({ slug, image }: Props) {
               </div>
 
               <div className="case-progress" aria-hidden="true">
-                {Array.from({ length: 8 }).map((_, idx) => (
+                {Array.from({ length: 7 }).map((_, idx) => (
                   <span
                     key={idx}
                     className={idx < activeOrder.stageIndex ? "is-filled" : undefined}

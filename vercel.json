@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/work/ayasha-bloom-ops", "destination": "/work/ayasha-blooms", "permanent": true },
+    { "source": "/work/ayasha-bloom-ops/opengraph-image", "destination": "/work/ayasha-blooms/opengraph-image", "permanent": true }
+  ]
+}
